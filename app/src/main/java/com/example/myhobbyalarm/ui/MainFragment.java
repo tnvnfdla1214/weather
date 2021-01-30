@@ -93,7 +93,8 @@ public class MainFragment extends Fragment
 
     //날씨 관련 변수
     TextView tvUpdated, tvStatus, tvTemp, tvTempMin, tvTempMax; //업데이트 시간, 날씨상태, 기온, 최저온도, 최고온도 변수
-    String API = "b298b9fd9ad4b11c145505d66138d5a9"; //openweatherMap에서 받은 api이다.
+    //String API = "b298b9fd9ad4b11c145505d66138d5a9"; //openweatherMap에서 받은 api이다.
+    String API = "b28d520792b48a3a6a5472b428bccca7"; //openweatherMap 에서 받은 임민규 API
     TextView tvDay; //달, 일, 요일 변수
     static double LON, LAT; //위도 경도를 담을 변수
     ImageView weatherImage; //OpenWeatherMap에서 가져오는 날씨 이미지 담을 변수
@@ -212,8 +213,8 @@ public class MainFragment extends Fragment
             String address = getCurrentAddress(latitude, longitude);
             tvGPS.setText(address);
 
-            LAT = latitude;
-            LON = longitude;
+            LAT = latitude;  //위도
+            LON = longitude;  //경도
 
             new weatherTask().execute();
 
